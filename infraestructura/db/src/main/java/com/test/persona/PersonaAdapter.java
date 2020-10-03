@@ -1,7 +1,8 @@
 package com.test.persona;
 
 import com.google.common.collect.Streams;
-import lombok.NoArgsConstructor;
+import com.test.persona.gateway.PersonaGateway;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,17 +12,11 @@ import java.util.stream.Collectors;
  * @author pedro
  */
 @Repository
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class PersonaAdapter implements PersonaGateway {
 
-    private PersonaDao personaDao;
-    private PersonaEntityMapper personaEntityMapper;
-
-    public PersonaAdapter(PersonaDao personaDao,
-                          PersonaEntityMapper personaEntityMapper) {
-        this.personaDao = personaDao;
-        this.personaEntityMapper = personaEntityMapper;
-    }
+    private final PersonaDao personaDao;
+    private final PersonaEntityMapper personaEntityMapper;
 
     @Override
     public List<PersonaModel> findAll() {

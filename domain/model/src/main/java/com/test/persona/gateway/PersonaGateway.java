@@ -1,4 +1,6 @@
-package com.test.persona;
+package com.test.persona.gateway;
+
+import com.test.persona.PersonaModel;
 
 import java.util.List;
 

@@ -13,8 +13,8 @@
         <module>infraestructura/db</module>
         <module>infraestructura/controller</module>
         <module>domain/model</module>
-        <module>domain/gateway</module>
-        <module>aplicacion/useCase</module>
+        <module>domain/useCase</module>
+        <module>aplicacion/app</module>
     </modules>
 
     <parent>

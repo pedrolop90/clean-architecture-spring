@@ -1,9 +1,9 @@
 package com.test.persona.impl;
 
-import com.test.persona.PersonaGateway;
 import com.test.persona.PersonaModel;
 import com.test.persona.PersonaUseCase;
-import lombok.NoArgsConstructor;
+import com.test.persona.gateway.PersonaGateway;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,14 +12,10 @@ import java.util.List;
  * @author pedro
  */
 @Service
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class PersonaUseCaseImpl implements PersonaUseCase {
 
-    private PersonaGateway personaGateway;
-
-    public PersonaUseCaseImpl(PersonaGateway personaGateway) {
-        this.personaGateway = personaGateway;
-    }
+    private final PersonaGateway personaGateway;
 
     @Override
     public List<PersonaModel> findAll() {

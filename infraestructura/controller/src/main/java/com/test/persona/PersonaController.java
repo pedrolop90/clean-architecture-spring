@@ -1,6 +1,6 @@
 package com.test.persona;
 
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,17 +12,12 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/persona")
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class PersonaController {
 
-    private PersonaUseCase personaUseCase;
-    private PersonaDtoMapper personaDtoMapper;
+    private final PersonaUseCase personaUseCase;
+    private final PersonaDtoMapper personaDtoMapper;
 
-    public PersonaController(PersonaUseCase personaUseCase,
-                             PersonaDtoMapper personaDtoMapper) {
-        this.personaUseCase = personaUseCase;
-        this.personaDtoMapper = personaDtoMapper;
-    }
 
     @GetMapping()
     public List<PersonaDto> findAll() {
